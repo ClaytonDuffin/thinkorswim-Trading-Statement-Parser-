@@ -1,5 +1,5 @@
 # thinkorswim-Trading-Statement-Parser-
-Python script to be used for brief analysis and charting of a trading statement generated through the thinkorswim® desktop application.
+Script to be used for brief analysis and charting of a trading statement generated through the thinkorswim® desktop application.
 
 This script was designed to be used for observing the performance of a sequence of single-leg options on futures trades. These trades are to have been executed through thinkorswim® paperMoney®. It is likely that this script would work with a real money statement, though it is not developed to the point where I would encourage doing so. In order to use the script for paper trading different products, say outright futures, or equity ETFs, some minor adjustments would need to be made. In order to get the script to the point where you would want to to use it for live trading (using real money), larger adjustments would need to be made, for example, basing P/L off specific contract specs, and having the script interpret multiple different products being traded at once. The initial parsing of the statement and the outline for how I've gone about doing things thus far is here, so in setting it up for your own specific use case, have fun!
 
