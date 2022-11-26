@@ -18,54 +18,35 @@ accountSummary = []
 with open('exampleStatement.csv') as statement:
     
     statement = csv.reader(statement, delimiter = '\n')
-    
-    count = 0
-    cashBalanceCount = 0
-    breakCount = 0
-    secondBreakCount = 0
-    thirdBreakCount = 0
+    count, breakCount, secondBreakCount, thirdBreakCount  = 0, 0, 0, 0
     
     for line in statement:
         count+= 1
         
         if count < 5:
             continue
-        
-        if (len(line) != 0):
-            cashBalanceCount += 1
-        else:
+        if (len(line) == 0):
             breakCount += 1
-            
         if breakCount < 1:
             cashBalance.append(line)
-       
         if (breakCount == 1 and (len(line) != 0) and breakCount < 2):
             futuresStatement.append(line)
-
         if (breakCount == 2 and (len(line) != 0) and breakCount < 3):
             forexStatements.append(line)
-            
         if breakCount == 3 and (len(line) != 0) and breakCount < 4:
             totalCash.append(line)
-
         if (breakCount == 5 and (len(line) != 0) and breakCount < 6):
             accountOrderHistory.append(line)
-        
         if (breakCount == 6 and (len(line) != 0) and breakCount < 7):
             accountTradeHistory.append(line) 
-        
         if (str(line) == "['Profits and Losses']"):
             secondBreakCount += breakCount
-        
         if ((breakCount != 0) and (breakCount == secondBreakCount) and (len(line) != 0) and (breakCount < secondBreakCount+1)):
             profitsandLosses.append(line) 
-
         if ((breakCount != 0) and (breakCount == secondBreakCount + 1) and (len(line) != 0)):
             forexAccountSummary.append(line)
-
         if (str(line) == "['Account Summary']"):
             thirdBreakCount += breakCount
-        
         if (thirdBreakCount == breakCount) and (thirdBreakCount > secondBreakCount):
             accountSummary.append(line)
             
