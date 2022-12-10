@@ -212,6 +212,7 @@ print("\nBernardo and Ledoit Ratio: " + format(((profitLossAndHoldingPeriods.pro
 def paperTradePlot(data: pd.DataFrame) -> None:
     
     ax1 = data.profitLoss.cumsum().plot(color = 'black', figsize = [14.275, 9.525])
+    ax1.axhline(0, linewidth = 1, color = 'firebrick')
     ax1.set_title('Cumulative Positionwise Equity Curve', fontsize = 18)
     ax1.set_xlabel('Number of Trades', size = 16)
     values = ax1.get_yticks()
@@ -221,6 +222,6 @@ def paperTradePlot(data: pd.DataFrame) -> None:
     ax1.grid(which = 'minor', linestyle = ':', linewidth = '0.9', color = 'grey')
     plt.tick_params(labelsize = 16, labelright = True)
     plt.minorticks_on()
-    plt.pause(.01)
+    plt.pause(0.01)
 
 paperTradePlot(profitLossAndHoldingPeriods)
