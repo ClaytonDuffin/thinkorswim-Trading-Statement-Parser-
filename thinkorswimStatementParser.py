@@ -87,7 +87,8 @@ for z in symbolsTraded:
 
 '''Used for looping through trades and determining if a trade is to be closed, and then if it is, 
     computing some general information for the trade; profit, loss, holding period, etc.'''
-def closeTrade(tradeOpen: list, closingOrder: list) -> list:
+def closeTrade(tradeOpen: list,
+               closingOrder: list) -> list:
     
     totalQuantity = 0
     weight = 0
