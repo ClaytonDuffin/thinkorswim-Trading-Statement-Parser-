@@ -188,7 +188,7 @@ holdingPeriods.insert(0,0)
 profitLossAndHoldingPeriods = pd.DataFrame({'profitLoss': profitLoss, 'holdingPeriods': holdingPeriods})
 
 
-'''To be used for counting how many puts vs. calls were bought'''
+'''To be used for counting how many puts vs. calls were bought.'''
 puts = []
 calls = []
 for i in sortedTrades:
