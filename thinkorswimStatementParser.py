@@ -85,10 +85,19 @@ for z in symbolsTraded:
     ordersBySymbol[z] = futuresTrades.loc[futuresTrades.index[indexList]]
 
 
-'''Used for looping through trades and determining if a trade is to be closed, and then if it is, 
-   computing some general information for the trade; profit, loss, holding period, etc.'''
+
 def closeTrade(tradeOpen: list,
                closingOrder: list) -> list:
+    
+    '''
+    Used for looping through trades and determining if a trade is to be closed, and then if it is, 
+    computing some general information for the trade; profit, loss, holding period, etc.
+    
+    tradeOpen : list
+        the current trade open during iteration.
+    closingOrder : list
+        closes the open trade out.
+    '''
     
     totalQuantity = 0
     weight = 0
