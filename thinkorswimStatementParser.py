@@ -67,7 +67,7 @@ orders = orderSplitter(accountTradeHistory)
 '''Sorts through dataframe to pull out desired product (options, futures, ETFs, etc.)'''
 indexList = []
 for i,j in enumerate(orders['Spread']):
-    if j == 'SINGLE': # Would change to FUTURE or whatever other product it is you're looking to track. Just be mindful that this script is designed to track single legged option trades
+    if j == 'SINGLE': # Would change to FUTURE or whatever other product it is you're looking to track. Just be mindful that this script is designed to track single legged option trades.
         indexList.append(i)
 
 futuresTrades = orders.loc[orders.index[indexList]]
@@ -145,7 +145,7 @@ def closeTrade(tradeOpen: list,
     if direction == 'Long':
         profitLoss = (float(exitPrice) - float(costBasis)) / float(costBasis)
     
-    #for some reason interprets flat trades as negative values, so to keep win-loss ratio "even" for flat trades, I do this.
+    #For some reason interprets flat trades as negative values, so to keep win-loss ratio "even" for flat trades, I do this.
     if profitLoss == -0.0:
         profitLoss = random.choice((-0.0, 0.0))
     
@@ -182,7 +182,7 @@ for key, positionStats in ordersBySymbol.items():
                     pass
 
 
-#sorts by the time a trade was initially opened
+#Sorts by the time a trade was initially opened.
 sortedTrades = sorted(trades[1:], key = lambda x: parse(x[4]))
 
 profitLoss, holdingPeriods = [], []
@@ -190,7 +190,7 @@ for i in sortedTrades:
     profitLoss.append(i[10])
     holdingPeriods.append(i[6])
 
-#adding leading placeholder 0's to make charting easier to interpret visually later on
+#Adding leading placeholder 0's to make charting easier to interpret visually later on.
 profitLoss.insert(0,0)
 holdingPeriods.insert(0,0)
      
