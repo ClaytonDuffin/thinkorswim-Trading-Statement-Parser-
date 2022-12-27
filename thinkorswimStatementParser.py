@@ -75,7 +75,7 @@ symbolsTraded = list(set(futuresTrades['Symbol']))
 
 
 '''Bunches trades by symbols being traded, so handles cases where you might be trading
-    numerous tickers, whether trading those concurrently or sequentially.'''
+   numerous tickers, whether trading those concurrently or sequentially.'''
 ordersBySymbol = {}
 for z in symbolsTraded:
     indexList = []
@@ -86,7 +86,7 @@ for z in symbolsTraded:
 
 
 '''Used for looping through trades and determining if a trade is to be closed, and then if it is, 
-    computing some general information for the trade; profit, loss, holding period, etc.'''
+   computing some general information for the trade; profit, loss, holding period, etc.'''
 def closeTrade(tradeOpen: list,
                closingOrder: list) -> list:
     
