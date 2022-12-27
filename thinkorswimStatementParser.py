@@ -209,8 +209,16 @@ print("\nAverage Loss: " + format(((profitLossAndHoldingPeriods.profitLoss[profi
 print("\nBernardo and Ledoit Ratio: " + format(((profitLossAndHoldingPeriods.profitLoss[profitLossAndHoldingPeriods.profitLoss > 0 ].sum()) / (abs(profitLossAndHoldingPeriods.profitLoss[profitLossAndHoldingPeriods.profitLoss < 0 ].sum()))), ".4f"))
 
 
-'''Function to be used for plotting equity curve.'''
 def paperTradePlot(data: pd.DataFrame) -> None:
+   
+    '''
+    Function to be used for plotting equity curve.
+    
+    Parameters
+    ----------
+    data : pd.DataFrame
+        data to be plotted.
+    '''
     
     ax1 = data.profitLoss.cumsum().plot(color = 'black', figsize = [14.275, 9.525])
     ax1.axhline(0, linewidth = 1, color = 'firebrick')
